@@ -1,0 +1,57 @@
+CSA AUTOMATED LOST AND FOUND SYSTEM
+Complete workflow evidence using fictional identities and illustrative images
+The temporary database is separate from the running application.
+
+[1] CSA has physically received item 1: Dark green canvas backpack
+    Item status: available
+[2] Maria Santos has submitted lost report 1
+    Report status: open
+[3] Matching selected typed_details: 59.0% (possible)
+    Scores remain restricted to CSA; no owner suggestion notice is sent.
+[4] CSA confirms the match; the owner receives a verification invitation.
+[5] Owner submits identifying answers and submission agreement: step1_pending
+[6] CSA passes online verification: step2_pending; item is under_verification
+[7] CSA records explicit in-person consent with its time and purpose.
+[8] CSA passes the in-person identity and ownership check: verified
+[9] Save three generated sample evidence images after consent.
+    These images simulate evidence fields; they are not real identity documents or signatures.
+[10] Both verification passes, consent, and evidence permit approval: approved
+[11] CSA records physical handover: item=released; claim=released; report=closed
+
+REJECTED INVALID OPERATIONS
+[X1] Second claim on the released item: REJECTED - The item is released, unclaimed, or currently under verification.
+[X2] Student attempts CSA approval: REJECTED - Your account cannot perform approve claim.
+[X3] Direct assignment to item.status: REJECTED - read-only property
+[X4] Released to available state transition: REJECTED - Item cannot change from released to available.
+[X5] Rewrite saved audit history: REJECTED - Audit logs are append-only
+
+PERSISTED AUDIT HISTORY
+  Prof. Daniel Cruz: FOUND_REPORT_CREATED | Report 1; awaiting physical turn-in
+  CSA Admin Reyes: ITEM_RECEIVED | Item 1; physical turn-in confirmed
+  System: AI_UNAVAILABLE | Using typed details matching; no AI score is claimed. Local AI has not been checked yet.
+  System: MATCHING_RUN | 0 suggestions saved; owners are not notified of suggestions
+  CSA Admin Reyes: ITEM_RECEIVED | Item 2; physical turn-in confirmed
+  System: AI_UNAVAILABLE | Using typed details matching; no AI score is claimed. Local AI has not been checked yet.
+  System: MATCHING_RUN | 0 suggestions saved; owners are not notified of suggestions
+  Maria Santos: LOST_REPORT_CREATED | Report 1
+  System: AI_UNAVAILABLE | Using typed details matching; no AI score is claimed. Local AI has not been checked yet.
+  System: MATCHING_RUN | 1 suggestions saved; owners are not notified of suggestions
+  Alex Rivera: LOST_REPORT_CREATED | Report 2
+  System: AI_UNAVAILABLE | Using typed details matching; no AI score is claimed. Local AI has not been checked yet.
+  System: MATCHING_RUN | 2 suggestions saved; owners are not notified of suggestions
+  Prof. Daniel Cruz: FOUND_REPORT_CREATED | Report 2; awaiting physical turn-in
+  CSA Admin Reyes: AI_UNAVAILABLE | Using typed details matching; no AI score is claimed. Local AI has not been checked yet.
+  CSA Admin Reyes: MATCHING_RUN | 2 suggestions saved; owners are not notified of suggestions
+  CSA Admin Reyes: AI_UNAVAILABLE | Using typed details matching; no AI score is claimed. Local AI has not been checked yet.
+  CSA Admin Reyes: MATCHING_RUN | 2 suggestions saved; owners are not notified of suggestions
+  CSA Admin Reyes: MATCH_CONFIRMED | Match 1
+  Maria Santos: CLAIM_SUBMITTED | Claim 1; item 1
+  CSA Admin Reyes: STEP1_PASSED | Claim 1; notes: 
+  CSA Admin Reyes: IN_PERSON_CONSENT_RECORDED | Claim 1; purpose: Illustrative classroom demo of identity and release evidence capture
+  CSA Admin Reyes: STEP2_PASSED | Claim 1; ID and ownership proof checked in person; notes: 
+  CSA Admin Reyes: CLAIM_APPROVED | Claim 1; verified evidence recorded
+  CSA Admin Reyes: ITEM_RELEASED | Item 1 to claimant 3; claim 1; handover complete
+  Maria Santos: CLAIM_REFUSED | The item is released, unclaimed, or currently under verification.
+  Maria Santos: DENIED_APPROVE_CLAIM | Role or account state denied action
+
+PASS: full workflow completed and every demonstrated invalid operation was rejected.

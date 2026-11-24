@@ -1,0 +1,77 @@
+{
+  "runtime": {
+    "ready": true,
+    "method": "clip_ai",
+    "reason": "CLIP and DINOv2 run locally. DINOv2 compares photos when both are available.",
+    "model": "CLIP ViT-B/32",
+    "photo_model": "DINOv2 Small",
+    "weights": {
+      "description": 30.0,
+      "photo": 30.0,
+      "color": 15.0,
+      "brand": 15.0,
+      "place_date": 10.0
+    },
+    "thresholds": {
+      "strong": 60,
+      "possible": 40
+    },
+    "local_only": true
+  },
+  "no_owner_photo": {
+    "version": 2,
+    "method": "clip_ai",
+    "weights": {
+      "description": 30.0,
+      "photo": 30.0,
+      "color": 15.0,
+      "brand": 15.0,
+      "place": 5.0,
+      "date": 5.0
+    },
+    "contributions": {
+      "color": 15.0,
+      "brand": 15.0,
+      "place": 5.0,
+      "date": 5.0,
+      "description": 30.0,
+      "photo": 16.75318917445218
+    },
+    "raw_total": 86.75318917445219,
+    "scale": 100.0,
+    "total": 86.75318917445219,
+    "photo_source": "owner_description",
+    "statement": "CLIP found close similarity between the written descriptions. CLIP found some similarity between the owner\u2019s description and the CSA photo. Both records list green for color, Campus for brand, Library for place.",
+    "explanation": "Available clues rescaled. Typed-only suggestions require two agreeing color, brand, or place clues and are capped at 59.",
+    "photo_model": "CLIP",
+    "strong_caveat": null
+  },
+  "with_owner_photo": {
+    "version": 2,
+    "method": "clip_ai",
+    "weights": {
+      "description": 30.0,
+      "photo": 30.0,
+      "color": 15.0,
+      "brand": 15.0,
+      "place": 5.0,
+      "date": 5.0
+    },
+    "contributions": {
+      "color": 15.0,
+      "brand": 15.0,
+      "place": 5.0,
+      "date": 5.0,
+      "description": 30.0,
+      "photo": 30.0
+    },
+    "raw_total": 100.0,
+    "scale": 100.0,
+    "total": 100.0,
+    "photo_source": "owner_photo",
+    "statement": "CLIP found close similarity between the written descriptions. DINOv2 found close similarity between the two photos. Both records list green for color, Campus for brand, Library for place.",
+    "explanation": "Available clues rescaled. Typed-only suggestions require two agreeing color, brand, or place clues and are capped at 59.",
+    "photo_model": "DINOv2",
+    "strong_caveat": null
+  }
+}

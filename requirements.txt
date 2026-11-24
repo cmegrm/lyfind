@@ -1,0 +1,2 @@
+# The local application and automated tests use Python 3.10+ standard library only.
+# No pip installation is needed for the local demonstration.

@@ -1,0 +1,148 @@
+{
+  "scope": "Fictional descriptions and synthetic seed illustrations; local model inference.",
+  "limitation": "These checks do not establish real-world accuracy. Verified photographs of the same objects from different angles and in poor lighting or blur are still needed.",
+  "ai_ready": true,
+  "ai_status": "CLIP is running on this server. No photos are sent externally.",
+  "summary": {
+    "typed_details": {
+      "cases": 8,
+      "unexpected_suggestions": 1,
+      "missed_expected_suggestions": 0
+    },
+    "clip_ai": {
+      "cases": 8,
+      "unexpected_suggestions": 4,
+      "missed_expected_suggestions": 0
+    }
+  },
+  "results": [
+    {
+      "case": "Matching description, same illustration",
+      "method": "typed_details",
+      "expected_suggestion": true,
+      "score": 59.0,
+      "level": "possible",
+      "suggested": true
+    },
+    {
+      "case": "Matching description, same illustration",
+      "method": "clip_ai",
+      "expected_suggestion": true,
+      "score": 100.0,
+      "level": "strong",
+      "suggested": true
+    },
+    {
+      "case": "Paraphrased description, no owner photo",
+      "method": "typed_details",
+      "expected_suggestion": true,
+      "score": 59.0,
+      "level": "possible",
+      "suggested": true
+    },
+    {
+      "case": "Paraphrased description, no owner photo",
+      "method": "clip_ai",
+      "expected_suggestion": true,
+      "score": 80.1,
+      "level": "strong",
+      "suggested": true
+    },
+    {
+      "case": "Same category, conflicting description and details",
+      "method": "typed_details",
+      "expected_suggestion": false,
+      "score": 12.5,
+      "level": "hidden",
+      "suggested": false
+    },
+    {
+      "case": "Same category, conflicting description and details",
+      "method": "clip_ai",
+      "expected_suggestion": false,
+      "score": 45.5,
+      "level": "possible",
+      "suggested": true
+    },
+    {
+      "case": "Only date agrees",
+      "method": "typed_details",
+      "expected_suggestion": false,
+      "score": 39.0,
+      "level": "hidden",
+      "suggested": false
+    },
+    {
+      "case": "Only date agrees",
+      "method": "clip_ai",
+      "expected_suggestion": false,
+      "score": 47.7,
+      "level": "possible",
+      "suggested": true
+    },
+    {
+      "case": "Only place and date available",
+      "method": "typed_details",
+      "expected_suggestion": false,
+      "score": 39.0,
+      "level": "hidden",
+      "suggested": false
+    },
+    {
+      "case": "Only place and date available",
+      "method": "clip_ai",
+      "expected_suggestion": false,
+      "score": 54.9,
+      "level": "possible",
+      "suggested": true
+    },
+    {
+      "case": "Matching color and place, unknown brand",
+      "method": "typed_details",
+      "expected_suggestion": true,
+      "score": 59.0,
+      "level": "possible",
+      "suggested": true
+    },
+    {
+      "case": "Matching color and place, unknown brand",
+      "method": "clip_ai",
+      "expected_suggestion": true,
+      "score": 84.8,
+      "level": "strong",
+      "suggested": true
+    },
+    {
+      "case": "Wrong category",
+      "method": "typed_details",
+      "expected_suggestion": false,
+      "score": 0.0,
+      "level": "hidden",
+      "suggested": false
+    },
+    {
+      "case": "Wrong category",
+      "method": "clip_ai",
+      "expected_suggestion": false,
+      "score": 0.0,
+      "level": "hidden",
+      "suggested": false
+    },
+    {
+      "case": "Conflicting photo but matching typed details",
+      "method": "typed_details",
+      "expected_suggestion": false,
+      "score": 59.0,
+      "level": "possible",
+      "suggested": true
+    },
+    {
+      "case": "Conflicting photo but matching typed details",
+      "method": "clip_ai",
+      "expected_suggestion": false,
+      "score": 96.3,
+      "level": "possible",
+      "suggested": true
+    }
+  ]
+}

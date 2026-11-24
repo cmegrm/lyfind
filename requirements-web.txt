@@ -1,0 +1,5 @@
+# Lightweight dependencies for hosting LyFind online with Google AI Studio (Gemini).
+# No PyTorch or local CLIP/DINOv2 downloads are needed on the web server.
+google-genai>=3.2.0
+Pillow>=10,<14
+gunicorn>=22; sys_platform != "win32"

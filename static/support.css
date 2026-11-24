@@ -1,0 +1,204 @@
+/* A quiet, docked entry point. The dialog itself uses the browser's focus trap. */
+.reunite-support-launcher {
+  position: fixed;
+  z-index: 42;
+  inset-inline-start: max(18px, env(safe-area-inset-left));
+  inset-inline-end: auto;
+  bottom: max(18px, env(safe-area-inset-bottom));
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 0 15px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  background: var(--paper);
+  box-shadow: 0 8px 28px #19161c1c;
+  font-weight: 650;
+  font-size: 13px;
+  transition: color .18s, background-color .18s, transform .18s;
+}
+.reunite-support-launcher:hover { color: var(--primary); background: var(--primary-tint); transform: translateY(-2px); }
+.reunite-support-launcher[hidden], .menu-open .reunite-support-launcher { display: none; }
+.reunite-support-launcher svg, .reunite-support-icon svg { width: 19px; height: 19px; flex: none; }
+
+.reunite-support-dialog {
+  position: fixed;
+  inset: auto auto max(74px, calc(74px + env(safe-area-inset-bottom))) max(18px, env(safe-area-inset-left));
+  width: min(420px, calc(100vw - 40px));
+  max-height: min(620px, calc(100dvh - 40px));
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 18px 60px #19161c36;
+  overscroll-behavior: contain;
+}
+.reunite-support-dialog[open] { animation: support-enter .23s cubic-bezier(.22,1,.36,1) both; }
+.reunite-support-dialog::backdrop { background: #16141a38; backdrop-filter: none; }
+@keyframes support-enter {
+  from { opacity: 0; transform: translateY(8px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.reunite-support-layout { display: flex; flex-direction: column; min-height: 0; }
+.reunite-support-dialog .reunite-support-layout {
+  height: min(550px, calc(100dvh - 42px));
+}
+.reunite-support-header {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 16px 14px 13px 19px;
+  border-bottom: 1px solid var(--line);
+}
+.reunite-support-heading { min-width: 0; }
+.reunite-support-heading h2 { margin: 0; color: var(--ink); font-size: 21px; font-weight: 680; }
+.reunite-support-heading h2:focus:not(:focus-visible) { outline: none; }
+.reunite-support-kicker {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 680;
+  letter-spacing: .11em;
+}
+.reunite-support-header-actions { display: flex; gap: 2px; }
+.reunite-support-icon {
+  display: grid;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--ink);
+}
+.reunite-support-icon:hover { border-color: var(--line); background: var(--canvas); }
+.reunite-support-content { display: flex; flex: 1; min-height: 0; flex-direction: column; overflow-y: auto; }
+.reunite-support-content h3 { margin: 0 0 5px; color: var(--ink); }
+.reunite-support-intro { flex: none; margin: 0; padding: 11px 19px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.reunite-support-person { display: flex; flex: none; align-items: center; gap: 9px; padding: 5px 14px; }
+.reunite-support-person-name { min-width: 0; overflow-wrap: anywhere; }
+.reunite-support-person-name strong, .reunite-support-person-name small { display: block; }
+.reunite-support-person-name small { color: var(--muted); }
+.reunite-support-list {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 9px;
+  min-height: 72px;
+  padding: 12px 18px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--canvas);
+  border-block: 1px solid var(--line);
+  scrollbar-width: thin;
+}
+.reunite-support-list:focus-visible { outline: 2px solid var(--primary); outline-offset: -3px; }
+.reunite-support-empty { margin: auto 0; padding: 8px 12px; color: var(--muted); text-align: center; font-size: 13px; line-height: 1.5; }
+.reunite-support-thread {
+  width: 100%;
+  flex: none;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  color: var(--ink);
+  text-align: start;
+  line-height: 1.45;
+}
+.reunite-support-thread:hover { border-color: var(--primary); }
+.reunite-support-thread-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.reunite-support-thread-heading strong { min-width: 0; overflow-wrap: anywhere; }
+.reunite-support-thread-heading small { flex: none; color: var(--muted); }
+.reunite-support-thread.needs-reply .reunite-support-thread-heading small { color: var(--primary); font-weight: 650; }
+.reunite-support-preview { margin: 4px 0; color: var(--muted); overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.reunite-support-message { flex: none; align-self: flex-start; min-width: 0; max-width: 91%; }
+.reunite-support-message.is-own { align-self: flex-end; text-align: end; }
+.reunite-support-sender { display: block; margin: 0 2px 3px; color: var(--muted); font-size: 12px; overflow-wrap: anywhere; }
+.reunite-support-bubble {
+  margin: 0 0 2px;
+  padding: 8px 11px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--paper);
+  color: var(--ink);
+  text-align: start;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.reunite-support-message.is-own .reunite-support-bubble { background: var(--primary-tint); }
+.reunite-support-note { color: var(--muted); font-size: 12px; line-height: 1.4; }
+.reunite-support-status { flex: none; min-height: 16px; margin: 7px 18px 0; color: var(--muted); font-size: 12px; line-height: 1.35; }
+.reunite-support-status.has-error { color: var(--primary); font-weight: 650; }
+.reunite-support-compose { flex: none; margin: 0; padding: 4px 18px 14px; }
+.reunite-support-compose-label { display: block; margin-bottom: 5px; font-size: 13px; font-weight: 650; }
+.reunite-support-input {
+  display: block;
+  width: 100%;
+  min-height: 54px;
+  padding: 8px 10px;
+  resize: vertical;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--canvas);
+  color: var(--ink);
+  line-height: 1.45;
+}
+.reunite-support-input::placeholder { color: var(--muted); }
+.reunite-support-compose-footer { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 8px; }
+.reunite-support-primary {
+  min-height: 44px;
+  padding: 0 15px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: var(--button-fill, var(--primary));
+  color: var(--button-ink, #fff8ef);
+  font-size: 13px;
+  font-weight: 680;
+  white-space: nowrap;
+}
+.reunite-support-primary:hover:not(:disabled) { filter: brightness(.92); }
+
+@media (max-width: 580px) {
+  .reunite-support-launcher {
+    inset-inline-start: max(12px, env(safe-area-inset-left));
+    bottom: max(12px, env(safe-area-inset-bottom));
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    padding: 0;
+  }
+  .reunite-support-launcher span { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .reunite-support-dialog {
+    inset: auto auto max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
+    width: calc(100vw - 24px);
+    max-height: calc(100dvh - 26px);
+  }
+  .reunite-support-dialog .reunite-support-layout { height: min(545px, calc(100dvh - 28px)); }
+  .reunite-support-input { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reunite-support-launcher, .reunite-support-dialog[open] { animation: none; transition: none; }
+  .reunite-support-launcher:hover { transform: none; }
+}
+@media print { .reunite-support-launcher { display: none !important; } }
+
+:root {
+  --paper: var(--white);
+  --canvas: var(--gray-50);
+  --muted: var(--gray-600);
+  --primary: var(--maroon);
+  --primary-tint: var(--maroon-tint);
+  --button-fill: var(--maroon-fill);
+  --button-ink: var(--on-maroon);
+  --wash: var(--gray-100);
+}
+.reunite-support-launcher { bottom: max(18px, env(safe-area-inset-bottom)); }

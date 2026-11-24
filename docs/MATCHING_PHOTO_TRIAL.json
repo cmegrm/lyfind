@@ -1,0 +1,820 @@
+{
+  "CLIP ViT-B/32": {
+    "seconds": 12.7,
+    "tuning": {
+      "60-degree view": {
+        "queries": 20,
+        "top_1": 18,
+        "top_5": 20,
+        "wrong_in_top_5": 80,
+        "missing_queries": 7,
+        "thresholds": [
+          {
+            "cosine": 0.7,
+            "same_pairs_above": 20,
+            "other_pairs_above": 134,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 7
+          },
+          {
+            "cosine": 0.76,
+            "same_pairs_above": 20,
+            "other_pairs_above": 45,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 4
+          },
+          {
+            "cosine": 0.8,
+            "same_pairs_above": 19,
+            "other_pairs_above": 15,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 2
+          },
+          {
+            "cosine": 0.85,
+            "same_pairs_above": 17,
+            "other_pairs_above": 5,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 1
+          },
+          {
+            "cosine": 0.9,
+            "same_pairs_above": 16,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.93,
+            "same_pairs_above": 10,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.95,
+            "same_pairs_above": 9,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.97,
+            "same_pairs_above": 3,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          }
+        ]
+      },
+      "120-degree view, darkened and blurred": {
+        "queries": 20,
+        "top_1": 15,
+        "top_5": 17,
+        "wrong_in_top_5": 83,
+        "missing_queries": 7,
+        "thresholds": [
+          {
+            "cosine": 0.7,
+            "same_pairs_above": 18,
+            "other_pairs_above": 118,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 7
+          },
+          {
+            "cosine": 0.76,
+            "same_pairs_above": 16,
+            "other_pairs_above": 31,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 4
+          },
+          {
+            "cosine": 0.8,
+            "same_pairs_above": 10,
+            "other_pairs_above": 1,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 1
+          },
+          {
+            "cosine": 0.85,
+            "same_pairs_above": 4,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.9,
+            "same_pairs_above": 0,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.93,
+            "same_pairs_above": 0,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.95,
+            "same_pairs_above": 0,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.97,
+            "same_pairs_above": 0,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          }
+        ]
+      }
+    },
+    "held_out": {
+      "60-degree view": {
+        "queries": 40,
+        "top_1": 29,
+        "top_5": 37,
+        "wrong_in_top_5": 163,
+        "missing_queries": 13,
+        "thresholds": [
+          {
+            "cosine": 0.7,
+            "same_pairs_above": 40,
+            "other_pairs_above": 681,
+            "lookalike_pairs_above": 44,
+            "missing_queries_with_suggestion": 12
+          },
+          {
+            "cosine": 0.76,
+            "same_pairs_above": 40,
+            "other_pairs_above": 262,
+            "lookalike_pairs_above": 34,
+            "missing_queries_with_suggestion": 11
+          },
+          {
+            "cosine": 0.8,
+            "same_pairs_above": 40,
+            "other_pairs_above": 117,
+            "lookalike_pairs_above": 28,
+            "missing_queries_with_suggestion": 10
+          },
+          {
+            "cosine": 0.85,
+            "same_pairs_above": 31,
+            "other_pairs_above": 42,
+            "lookalike_pairs_above": 19,
+            "missing_queries_with_suggestion": 5
+          },
+          {
+            "cosine": 0.9,
+            "same_pairs_above": 24,
+            "other_pairs_above": 14,
+            "lookalike_pairs_above": 7,
+            "missing_queries_with_suggestion": 1
+          },
+          {
+            "cosine": 0.93,
+            "same_pairs_above": 17,
+            "other_pairs_above": 2,
+            "lookalike_pairs_above": 1,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.95,
+            "same_pairs_above": 12,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.97,
+            "same_pairs_above": 7,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          }
+        ]
+      },
+      "120-degree view, darkened and blurred": {
+        "queries": 40,
+        "top_1": 24,
+        "top_5": 33,
+        "wrong_in_top_5": 167,
+        "missing_queries": 13,
+        "thresholds": [
+          {
+            "cosine": 0.7,
+            "same_pairs_above": 36,
+            "other_pairs_above": 584,
+            "lookalike_pairs_above": 35,
+            "missing_queries_with_suggestion": 13
+          },
+          {
+            "cosine": 0.76,
+            "same_pairs_above": 32,
+            "other_pairs_above": 165,
+            "lookalike_pairs_above": 24,
+            "missing_queries_with_suggestion": 12
+          },
+          {
+            "cosine": 0.8,
+            "same_pairs_above": 27,
+            "other_pairs_above": 41,
+            "lookalike_pairs_above": 14,
+            "missing_queries_with_suggestion": 6
+          },
+          {
+            "cosine": 0.85,
+            "same_pairs_above": 14,
+            "other_pairs_above": 2,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.9,
+            "same_pairs_above": 1,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.93,
+            "same_pairs_above": 0,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.95,
+            "same_pairs_above": 0,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.97,
+            "same_pairs_above": 0,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          }
+        ]
+      }
+    },
+    "held_out_queue_with_generic_descriptions": {
+      "60-degree view": {
+        "true_strong_before": 40,
+        "true_strong_after": 12,
+        "wrong_strong_before": 154,
+        "wrong_strong_after": 0,
+        "missing_queries_with_strong_before": 11,
+        "missing_queries_with_strong_after": 0,
+        "wrong_visible": 1560
+      },
+      "120-degree view, darkened and blurred": {
+        "true_strong_before": 28,
+        "true_strong_after": 0,
+        "wrong_strong_before": 74,
+        "wrong_strong_after": 0,
+        "missing_queries_with_strong_before": 8,
+        "missing_queries_with_strong_after": 0,
+        "wrong_visible": 1560
+      }
+    },
+    "uw": {
+      "Second view": {
+        "queries": 11,
+        "top_1": 10,
+        "top_5": 11,
+        "wrong_in_top_5": 44,
+        "missing_queries": 3,
+        "thresholds": [
+          {
+            "cosine": 0.7,
+            "same_pairs_above": 11,
+            "other_pairs_above": 99,
+            "lookalike_pairs_above": 52,
+            "missing_queries_with_suggestion": 3
+          },
+          {
+            "cosine": 0.76,
+            "same_pairs_above": 11,
+            "other_pairs_above": 65,
+            "lookalike_pairs_above": 48,
+            "missing_queries_with_suggestion": 3
+          },
+          {
+            "cosine": 0.8,
+            "same_pairs_above": 11,
+            "other_pairs_above": 43,
+            "lookalike_pairs_above": 42,
+            "missing_queries_with_suggestion": 3
+          },
+          {
+            "cosine": 0.85,
+            "same_pairs_above": 9,
+            "other_pairs_above": 29,
+            "lookalike_pairs_above": 29,
+            "missing_queries_with_suggestion": 2
+          },
+          {
+            "cosine": 0.9,
+            "same_pairs_above": 7,
+            "other_pairs_above": 8,
+            "lookalike_pairs_above": 8,
+            "missing_queries_with_suggestion": 2
+          },
+          {
+            "cosine": 0.93,
+            "same_pairs_above": 7,
+            "other_pairs_above": 1,
+            "lookalike_pairs_above": 1,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.95,
+            "same_pairs_above": 5,
+            "other_pairs_above": 1,
+            "lookalike_pairs_above": 1,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.97,
+            "same_pairs_above": 2,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          }
+        ]
+      },
+      "Second view, darkened and blurred": {
+        "queries": 11,
+        "top_1": 8,
+        "top_5": 10,
+        "wrong_in_top_5": 45,
+        "missing_queries": 3,
+        "thresholds": [
+          {
+            "cosine": 0.7,
+            "same_pairs_above": 11,
+            "other_pairs_above": 90,
+            "lookalike_pairs_above": 50,
+            "missing_queries_with_suggestion": 3
+          },
+          {
+            "cosine": 0.76,
+            "same_pairs_above": 10,
+            "other_pairs_above": 53,
+            "lookalike_pairs_above": 41,
+            "missing_queries_with_suggestion": 3
+          },
+          {
+            "cosine": 0.8,
+            "same_pairs_above": 10,
+            "other_pairs_above": 31,
+            "lookalike_pairs_above": 28,
+            "missing_queries_with_suggestion": 3
+          },
+          {
+            "cosine": 0.85,
+            "same_pairs_above": 6,
+            "other_pairs_above": 2,
+            "lookalike_pairs_above": 2,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.9,
+            "same_pairs_above": 1,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.93,
+            "same_pairs_above": 0,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.95,
+            "same_pairs_above": 0,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.97,
+            "same_pairs_above": 0,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          }
+        ]
+      }
+    }
+  },
+  "DINOv2 Small": {
+    "seconds": 16.0,
+    "tuning": {
+      "60-degree view": {
+        "queries": 20,
+        "top_1": 20,
+        "top_5": 20,
+        "wrong_in_top_5": 80,
+        "missing_queries": 7,
+        "thresholds": [
+          {
+            "cosine": 0.7,
+            "same_pairs_above": 19,
+            "other_pairs_above": 6,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 1
+          },
+          {
+            "cosine": 0.76,
+            "same_pairs_above": 18,
+            "other_pairs_above": 3,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.8,
+            "same_pairs_above": 14,
+            "other_pairs_above": 1,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.85,
+            "same_pairs_above": 10,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.9,
+            "same_pairs_above": 4,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.93,
+            "same_pairs_above": 4,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.95,
+            "same_pairs_above": 3,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.97,
+            "same_pairs_above": 2,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          }
+        ]
+      },
+      "120-degree view, darkened and blurred": {
+        "queries": 20,
+        "top_1": 20,
+        "top_5": 20,
+        "wrong_in_top_5": 80,
+        "missing_queries": 7,
+        "thresholds": [
+          {
+            "cosine": 0.7,
+            "same_pairs_above": 13,
+            "other_pairs_above": 4,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.76,
+            "same_pairs_above": 11,
+            "other_pairs_above": 3,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.8,
+            "same_pairs_above": 8,
+            "other_pairs_above": 1,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.85,
+            "same_pairs_above": 4,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.9,
+            "same_pairs_above": 1,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.93,
+            "same_pairs_above": 0,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.95,
+            "same_pairs_above": 0,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.97,
+            "same_pairs_above": 0,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          }
+        ]
+      }
+    },
+    "held_out": {
+      "60-degree view": {
+        "queries": 40,
+        "top_1": 38,
+        "top_5": 40,
+        "wrong_in_top_5": 160,
+        "missing_queries": 13,
+        "thresholds": [
+          {
+            "cosine": 0.7,
+            "same_pairs_above": 36,
+            "other_pairs_above": 16,
+            "lookalike_pairs_above": 6,
+            "missing_queries_with_suggestion": 3
+          },
+          {
+            "cosine": 0.76,
+            "same_pairs_above": 31,
+            "other_pairs_above": 8,
+            "lookalike_pairs_above": 4,
+            "missing_queries_with_suggestion": 2
+          },
+          {
+            "cosine": 0.8,
+            "same_pairs_above": 24,
+            "other_pairs_above": 6,
+            "lookalike_pairs_above": 4,
+            "missing_queries_with_suggestion": 2
+          },
+          {
+            "cosine": 0.85,
+            "same_pairs_above": 19,
+            "other_pairs_above": 5,
+            "lookalike_pairs_above": 4,
+            "missing_queries_with_suggestion": 2
+          },
+          {
+            "cosine": 0.9,
+            "same_pairs_above": 12,
+            "other_pairs_above": 2,
+            "lookalike_pairs_above": 2,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.93,
+            "same_pairs_above": 9,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.95,
+            "same_pairs_above": 5,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.97,
+            "same_pairs_above": 2,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          }
+        ]
+      },
+      "120-degree view, darkened and blurred": {
+        "queries": 40,
+        "top_1": 35,
+        "top_5": 39,
+        "wrong_in_top_5": 161,
+        "missing_queries": 13,
+        "thresholds": [
+          {
+            "cosine": 0.7,
+            "same_pairs_above": 25,
+            "other_pairs_above": 9,
+            "lookalike_pairs_above": 5,
+            "missing_queries_with_suggestion": 2
+          },
+          {
+            "cosine": 0.76,
+            "same_pairs_above": 17,
+            "other_pairs_above": 6,
+            "lookalike_pairs_above": 4,
+            "missing_queries_with_suggestion": 2
+          },
+          {
+            "cosine": 0.8,
+            "same_pairs_above": 15,
+            "other_pairs_above": 3,
+            "lookalike_pairs_above": 2,
+            "missing_queries_with_suggestion": 2
+          },
+          {
+            "cosine": 0.85,
+            "same_pairs_above": 10,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.9,
+            "same_pairs_above": 3,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.93,
+            "same_pairs_above": 0,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.95,
+            "same_pairs_above": 0,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.97,
+            "same_pairs_above": 0,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          }
+        ]
+      }
+    },
+    "uw": {
+      "Second view": {
+        "queries": 11,
+        "top_1": 9,
+        "top_5": 11,
+        "wrong_in_top_5": 44,
+        "missing_queries": 3,
+        "thresholds": [
+          {
+            "cosine": 0.7,
+            "same_pairs_above": 9,
+            "other_pairs_above": 9,
+            "lookalike_pairs_above": 9,
+            "missing_queries_with_suggestion": 1
+          },
+          {
+            "cosine": 0.76,
+            "same_pairs_above": 8,
+            "other_pairs_above": 3,
+            "lookalike_pairs_above": 3,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.8,
+            "same_pairs_above": 8,
+            "other_pairs_above": 1,
+            "lookalike_pairs_above": 1,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.85,
+            "same_pairs_above": 6,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.9,
+            "same_pairs_above": 3,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.93,
+            "same_pairs_above": 2,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.95,
+            "same_pairs_above": 2,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.97,
+            "same_pairs_above": 1,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          }
+        ]
+      },
+      "Second view, darkened and blurred": {
+        "queries": 11,
+        "top_1": 10,
+        "top_5": 11,
+        "wrong_in_top_5": 44,
+        "missing_queries": 3,
+        "thresholds": [
+          {
+            "cosine": 0.7,
+            "same_pairs_above": 7,
+            "other_pairs_above": 4,
+            "lookalike_pairs_above": 4,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.76,
+            "same_pairs_above": 6,
+            "other_pairs_above": 1,
+            "lookalike_pairs_above": 1,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.8,
+            "same_pairs_above": 3,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.85,
+            "same_pairs_above": 2,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.9,
+            "same_pairs_above": 1,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.93,
+            "same_pairs_above": 0,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.95,
+            "same_pairs_above": 0,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          },
+          {
+            "cosine": 0.97,
+            "same_pairs_above": 0,
+            "other_pairs_above": 0,
+            "lookalike_pairs_above": 0,
+            "missing_queries_with_suggestion": 0
+          }
+        ]
+      }
+    }
+  }
+}

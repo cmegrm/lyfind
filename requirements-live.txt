@@ -1,0 +1,4 @@
+# Optional verified Microsoft university sign-in.
+msal>=1.29,<2
+# Optional image structure validation and EXIF handling.
+Pillow>=10,<13

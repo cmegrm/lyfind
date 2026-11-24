@@ -1,0 +1,6 @@
+University Microsoft sign-in: SETUP REQUIRED
+  Missing settings: MICROSOFT_TENANT_ID, MICROSOFT_CLIENT_ID, MICROSOFT_CLIENT_SECRET, UNIVERSITY_EMAIL_DOMAINS
+  Install requirements-live.txt for the Microsoft SDK.
+Guest email delivery: SETUP REQUIRED
+  Missing settings: SMTP_HOST, SMTP_FROM
+This checks local settings only; live service verification is still required.

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="6 6 52 52" width="64" height="64">
+  <title>LyFind</title>
+  <path d="M14.25 14.5 V35 Q14.25 49.5 28.75 49.5 H49.75" fill="none" stroke="#7a2438" stroke-width="12.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path fill="#f2b705" d="M31.25 12 H38.75 L49.75 23 V31.5 A6.5 6.5 0 0 1 43.25 38 H31.25 A6.5 6.5 0 0 1 24.75 31.5 V18.5 A6.5 6.5 0 0 1 31.25 12 Z"/>
+</svg>

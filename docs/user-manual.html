@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LyFind User Manual</title>
+<style>
+  @page { size: A4; margin: 16mm 16mm 18mm; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    color: #1b1b1f;
+    font: 11pt/1.5 "SF Pro Text", Inter, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; color: #5f1723; page-break-after: avoid; }
+  h1 { font-size: 26pt; margin: 0 0 8pt; line-height: 1.15; }
+  h2 { font-size: 16pt; margin: 22pt 0 8pt; padding-bottom: 4pt; border-bottom: 2px solid #7a1f2e; }
+  h3 { font-size: 12.5pt; margin: 14pt 0 6pt; color: #7a1f2e; }
+  p, li { font-size: 10.5pt; }
+  p { margin: 0 0 8pt; }
+  ol, ul { margin: 0 0 10pt; padding-left: 18pt; }
+  li { margin: 0 0 4pt; }
+  .cover {
+    min-height: 240mm;
+    padding: 28mm 8mm 0;
+    page-break-after: always;
+  }
+  .kicker { letter-spacing: .18em; font-size: 9pt; color: #a78a58; text-transform: uppercase; margin: 0 0 10pt; }
+  .cover p.lead { font-size: 13pt; color: #46464e; max-width: 140mm; }
+  .meta { color: #5a5a64; font-size: 10pt; }
+  .band {
+    margin-top: 36mm;
+    background: #7a1f2e;
+    color: #fff;
+    padding: 14pt 16pt;
+    border-radius: 8pt;
+  }
+  .band strong { color: #f5c542; }
+  .toc { page-break-after: always; }
+  .toc ol { list-style: none; padding: 0; }
+  .toc li { display: flex; justify-content: space-between; border-bottom: 1px dotted #d9d9df; padding: 6pt 0; }
+  .toc .num { color: #7a1f2e; font-weight: 700; margin-right: 8pt; }
+  table { width: 100%; border-collapse: collapse; margin: 0 0 12pt; font-size: 10pt; page-break-inside: avoid; }
+  th, td { border: 1px solid #e8e8ec; padding: 6pt 8pt; text-align: left; vertical-align: top; }
+  th { background: #f6e7ea; color: #5f1723; }
+  .note, .warn, .tip {
+    page-break-inside: avoid;
+    padding: 9pt 12pt;
+    margin: 10pt 0 12pt;
+    border-radius: 6pt;
+  }
+  .note { background: #f6e7ea; border-left: 4px solid #7a1f2e; }
+  .tip { background: #fdf4d4; border-left: 4px solid #f5c542; }
+  .warn { background: #f4f4f5; border-left: 4px solid #46464e; }
+  .note strong, .tip strong, .warn strong { display: block; margin-bottom: 3pt; }
+  .steps { counter-reset: step; list-style: none; padding: 0; }
+  .steps li {
+    counter-increment: step;
+    position: relative;
+    padding: 6pt 0 6pt 28pt;
+    border-bottom: 1px solid #f4f4f5;
+  }
+  .steps li::before {
+    content: counter(step);
+    position: absolute; left: 0; top: 6pt;
+    width: 18pt; height: 18pt; border-radius: 50%;
+    background: #7a1f2e; color: #fff; font-size: 9pt; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; line-height: 18pt;
+  }
+  kbd {
+    font: 8.5pt/1.2 ui-monospace, Menlo, monospace;
+    background: #f4f4f5; border: 1px solid #d9d9df; border-bottom-width: 2px;
+    border-radius: 3pt; padding: 1pt 4pt;
+  }
+  footer.page { display: none; }
+  .small { font-size: 9.5pt; color: #5a5a64; }
+  .keep { page-break-inside: avoid; }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <p class="kicker">LPU CSA · Campus Lost and Found</p>
+  <h1>LyFind User Manual</h1>
+  <p class="lead">How every kind of user reports, matches, checks, and hands back an item. Written for students, professors, guests, and especially CSA staff.</p>
+  <p class="meta">LyFind website · November 2026 · For classroom and office use</p>
+  <div class="band">
+    Open the site at <strong>http://127.0.0.1:8765</strong> after you start it with <strong>python3 main.py</strong>. Do not open the HTML file in Finder.
+  </div>
+</section>
+
+<section class="toc">
+  <h2>Contents</h2>
+  <ol>
+    <li><span><span class="num">1</span> What LyFind is</span></li>
+    <li><span><span class="num">2</span> How to open the website</span></li>
+    <li><span><span class="num">3</span> Who signs in, and how</span></li>
+    <li><span><span class="num">4</span> Students</span></li>
+    <li><span><span class="num">5</span> Professors</span></li>
+    <li><span><span class="num">6</span> Guests</span></li>
+    <li><span><span class="num">7</span> CSA staff and admin — daily work</span></li>
+    <li><span><span class="num">8</span> AI matching — how to use and check it</span></li>
+    <li><span><span class="num">9</span> Claims: answers, office check, photos, handover</span></li>
+    <li><span><span class="num">10</span> Admin tools</span></li>
+    <li><span><span class="num">11</span> Privacy, ID, and what never to skip</span></li>
+    <li><span><span class="num">12</span> Classroom demo accounts</span></li>
+    <li><span><span class="num">13</span> Help</span></li>
+    <li><span><span class="num">14</span> If something goes wrong</span></li>
+  </ol>
+</section>
+
+<h2>1. What LyFind is</h2>
+<p>LyFind is the CSA lost-and-found website. It records items that reach the office, compares lost reports with those items, invites a likely owner, and records the checks before the item leaves the desk.</p>
+<p>The five steps you will see on cards:</p>
+<table>
+  <tr><th>Step</th><th>Meaning</th></tr>
+  <tr><td>1 Report</td><td>Someone reported a lost item, or a found item is waiting to be turned in.</td></tr>
+  <tr><td>2 Match</td><td>CSA reviews a suggested pair and may invite the owner.</td></tr>
+  <tr><td>3 Verify</td><td>The owner answers private questions. CSA then checks ID at the office.</td></tr>
+  <tr><td>4 Hand over</td><td>Photos are on file. Staff give the item to the owner.</td></tr>
+  <tr><td>5 Done</td><td>The report is closed. Nobody else can claim that item.</td></tr>
+</table>
+<div class="warn">
+  <strong>The website does not replace the desk.</strong>
+  A match score is a hint. A valid ID at the CSA office is still required. LyFind never hands an item over by itself.
+</div>
+
+<h2>2. How to open the website</h2>
+<ol class="steps">
+  <li>On the computer that has this project, open Terminal.</li>
+  <li>Go to the LyFind folder, then run <kbd>python3 main.py</kbd>.</li>
+  <li>Keep that window open. In a browser, visit <kbd>http://127.0.0.1:8765</kbd>.</li>
+  <li>Use Sign in or Sign up. Help on the site explains each role.</li>
+</ol>
+<p>Optional, once: <kbd>python3 setup_ai.py</kbd> installs local photo matching (about 1.5 GB, needs internet once). Without it the site still works; Matches will say <b>AI is off</b> and use typed details only.</p>
+<p class="small">If port 8765 is busy, run <kbd>python3 main.py --port 8766</kbd> and open that address instead.</p>
+
+<h2>3. Who signs in, and how</h2>
+<table>
+  <tr><th>Who</th><th>How to get in</th><th>Password?</th></tr>
+  <tr><td>Student</td><td>First time: Sign in → Open an LPU account. Use your <kbd>YYYY-N-NNNNN@lpunetwork.edu.ph</kbd> address, type the 6-digit code, then choose a password. After that, sign in with the email and password.</td><td>Yes, after the first code. At least 10 characters.</td></tr>
+  <tr><td>Professor</td><td>Same as a student: open the account once with the school email and the code, choose a password, then sign in with the email and password.</td><td>Yes, after the first code. At least 10 characters.</td></tr>
+  <tr><td>Guest</td><td>Sign up with name, email, and password. Confirm the email with a 6-digit code. Next time, Sign in with email and password.</td><td>Yes. At least 10 characters.</td></tr>
+  <tr><td>CSA staff</td><td>The office creates your account. Sign in with that email and password. Staff cannot sign up themselves.</td><td>Yes. 8 to 20 characters.</td></tr>
+</table>
+<p>A code works once, expires after 10 minutes, and allows 5 wrong tries. You can request a new code after 60 seconds. Five wrong passwords lock that email for 15 minutes.</p>
+<div class="note">
+  <strong>In classroom demo mode</strong>
+  If email is not configured, the Check your email screen shows the code on the page. In live campus mode, codes are only emailed and never shown on screen.
+</div>
+
+<h2>4. Students</h2>
+<h3>If you lost something</h3>
+<ol class="steps">
+  <li>Sign in with your LPU email and password. The first time, open the account with the emailed code, then choose that password.</li>
+  <li>Choose <b>Report lost</b>.</li>
+  <li>Say what it is, the category, color, brand if you know it, where, and when.</li>
+  <li>Add identifying marks (keychain, scratch, initials). These help more than a generic description.</li>
+  <li>Add a photo of <i>your</i> item if you have one — not a similar photo from the internet. Fill the frame, even light, include a mark only you would know.</li>
+  <li>Submit. Follow the item on Home and in Updates.</li>
+</ol>
+<h3>If CSA invites you</h3>
+<ol class="steps">
+  <li>Open <b>My claims</b> (or the invitation in Updates).</li>
+  <li>Choose <b>Claim item</b>. Describe something only the owner would know. Do not type a password.</li>
+  <li>Tick the box and Send. Wait for CSA to read the answers.</li>
+  <li>When asked, go to the CSA office with a <b>valid ID</b>.</li>
+  <li>Staff will check the item with you, take photos (you with the item, your ID, your signature), then hand it over.</li>
+</ol>
+<h3>If you found something</h3>
+<p>Choose <b>Report found</b>, then <b>bring the physical item to the CSA office</b>. It cannot be claimed until CSA receives it and photographs it.</p>
+
+<h2>5. Professors</h2>
+<p>Sign in is the same as students: LPU email and password, after a one-time code when the account is opened.</p>
+<ul>
+  <li><b>Report lost</b> the same way a student does.</li>
+  <li><b>Report found</b> if you picked something up. Set when you will bring it in. CSA still has to receive it at the office before anyone can claim it.</li>
+  <li>When invited, answer the ownership questions and bring ID to CSA.</li>
+</ul>
+
+<h2>6. Guests</h2>
+<ol class="steps">
+  <li>Sign up, confirm your email with the code, then sign in with email and password.</li>
+  <li>You can <b>Report lost</b> only. CSA checks each guest report before matching starts. That reduces pranks.</li>
+  <li>If you found an item, take it straight to the CSA office. Do not file an online found report as a guest.</li>
+  <li>If CSA invites you, answer the questions and bring a valid ID to pick it up.</li>
+</ol>
+<div class="tip">
+  <strong>Guest reports wait</strong>
+  Staff see them under To do → Guest reports to check. Matching does not run until a staff member marks the report as checked (or hides it if it looks fake).
+</div>
+
+<h2>7. CSA staff and admin — daily work</h2>
+<p>Sign in with the staff email and password the office gave you. Your home page is <b>To do</b>.</p>
+
+<h3>7.1 Start at To do</h3>
+<p>The four cards are buttons. Use them every shift:</p>
+<table>
+  <tr><th>Card</th><th>What to do</th></tr>
+  <tr><td>Waiting</td><td>Claims that need an online check, an office check, photos, or handover.</td></tr>
+  <tr><td>Matches</td><td>Suggested pairs to Approve or Reject. Strongest first.</td></tr>
+  <tr><td>In the office</td><td>Items already received. Open Found items.</td></tr>
+  <tr><td>Done this week</td><td>Handovers already recorded.</td></tr>
+</table>
+<p>Also on To do: guest reports that still need a human check, and an <b>AI is on</b> or <b>AI is off</b> card so you know whether photos were compared by the local models.</p>
+
+<h3>7.2 Add a found item (receive)</h3>
+<p>Only after the object is physically on the desk.</p>
+<ol class="steps">
+  <li>Press <b>Add found item</b> (or open a found report that is awaiting turn-in and receive it from there).</li>
+  <li>Confirm category, description, place, and date found. Date cannot be in the future. Found-before-lost pairs are later hidden by matching.</li>
+  <li>Set color and brand. Wrong color or brand will cap a match score.</li>
+  <li>Keep-for days defaults to 30. After that, unclaimed items can be marked Not claimed under Admin → Clean up.</li>
+  <li><b>Private details</b> (required): something only the owner would know — initials inside, a receipt, a charm. Owners never see this text. You will compare it with their answers.</li>
+  <li><b>Photo of the item</b> (required): photograph the real object in front of you. JPEG, PNG, or WebP, up to 5 MB. Fill the frame. Two different bags that only “look similar” should not match.</li>
+  <li>Save. The item appears under Found items, and matching runs right away.</li>
+</ol>
+
+<h3>7.3 Lost reports and guest checks</h3>
+<ul>
+  <li>Open <b>Lost reports</b> to see every owner report and its step.</li>
+  <li>For a guest report: read it. If it looks real, <b>Mark as checked</b>. Matching can then run. If it looks like a prank, <b>Hide report</b> (the record stays; you can restore it). Give a reason. Hiding is logged.</li>
+  <li>Do not read private found-item details aloud to a claimant. Compare silently.</li>
+</ul>
+
+<h3>7.4 Found items</h3>
+<p>Tabs: <b>In the office</b> (claimable inventory) and <b>On the way</b> (found reports not yet received). Filter by status: available, being checked, handed back, not claimed. Open an item to see the staff-only photo and private details.</p>
+
+<h2>8. AI matching — how to use and check it</h2>
+<p>This is the part staff use to decide whether the owner’s photo is the same physical item that was surrendered to CSA.</p>
+
+<h3>8.1 What the AI actually does</h3>
+<ul>
+  <li>It runs <b>on this computer</b> with DINOv2 and CLIP. Photos never leave the server.</li>
+  <li><b>DINOv2</b> compares the owner’s photo with the office photo (same physical item vs a different object of the same type).</li>
+  <li><b>CLIP</b> compares typed words with a photo when that helps (for example, no owner photo).</li>
+  <li>If both photos exist and they do not look like the same object, matching words <b>cannot</b> save the pair. It stays hidden.</li>
+  <li>If models are missing, Matches shows <b>AI is off</b> and uses typed details only. Typed details alone never reach Strong.</li>
+</ul>
+
+<h3>8.2 How to review a match</h3>
+<ol class="steps">
+  <li>Open <b>Matches</b>. The badge is <b>1 waiting</b> when something needs you.</li>
+  <li>Use tabs: <b>To review</b> (your job), <b>Invited</b> (you already approved; waiting for the owner), <b>All</b>.</li>
+  <li>Look at the two pictures: <b>Owner’s photo</b> vs <b>Item in the office</b>. Ask: is this the same bag/wallet that CSA received, or only the same kind of object?</li>
+  <li>Open <b>Why this match?</b>. Read every bar:
+    photo looks alike, words fit the photo, description words, category, color, brand, place, date.</li>
+  <li>Read private details on the found item (View item) and the owner’s identifying marks. Do they agree?</li>
+  <li>If it is the same item: <b>Approve</b>, tick “I checked the details.” The owner is invited to answer questions. They still must show ID later.</li>
+  <li>If it is not the same item: <b>Reject</b>. The owner is not told. The item stays available for other reports.</li>
+</ol>
+
+<table>
+  <tr><th>Label</th><th>Score</th><th>What it means for you</th></tr>
+  <tr><td>Strong</td><td>80 and up</td><td>Photos (or a full set of signals) look like the same item. Still check with your eyes before you invite.</td></tr>
+  <tr><td>Possible</td><td>60 to 79</td><td>Overlap in details, but photos did not prove it. Be extra careful.</td></tr>
+  <tr><td>Not shown</td><td>Below 60</td><td>LyFind hides the pair. You should not treat it as a match.</td></tr>
+</table>
+<div class="note">
+  <strong>How to check the photos yourself</strong>
+  Same item: same shape, same badge or zipper, same marks, even if one photo is a tighter crop. Different item: another backpack of the same color is not a match. If you are unsure, Reject and wait for a better report, or ask the person more questions at the desk. Never Approve only because the percentage is 100%.
+</div>
+
+<h3>8.3 Find matches</h3>
+<p>Matching also runs when you save a lost report or receive an item. Press <b>Find matches</b> after a batch of new reports, or if AI was off and you later turned it on. A rerun updates open suggestions. Matches you already approved or rejected are kept.</p>
+
+<h3>8.4 What owners never see</h3>
+<p>Scores, found-item photos, private details, and the exact found place stay hidden until you approve a match. After invitation they still do not see the private notes; they only answer questions.</p>
+
+<h2>9. Claims: answers, office check, photos, handover</h2>
+<p>Open <b>Claims</b> (or Waiting on To do). Work in this order. The site will refuse if you skip a step.</p>
+
+<h3>9.1 Online check (answers)</h3>
+<ol class="steps">
+  <li>Open the claim. Read the owner’s answers.</li>
+  <li>Open the item and compare with <b>Private details</b>. Do not coach the claimant.</li>
+  <li>If they match: <b>Approve</b>. Optional note. Tick “I checked this myself.” The owner is told to bring ID.</li>
+  <li>If they do not match: <b>Reject</b> with a reason the owner will see. The item goes back to the shelf. That person has <b>three tries</b> on the same item; after that they are blocked from claiming that item only.</li>
+</ol>
+
+<h3>9.2 Office check (the person is here)</h3>
+<ol class="steps">
+  <li>The owner must be at the desk. Press <b>Start check</b>.</li>
+  <li>Record what you told them (default: to check ownership and record the handover).</li>
+  <li>Tick that they are here and agree to the photos.</li>
+  <li>Check the ID against the person. Compare answers again if needed.</li>
+  <li><b>Approve</b> the office check, or <b>Reject</b> with a reason.</li>
+</ol>
+
+<h3>9.3 Evidence photos, then Hand over</h3>
+<ol class="steps">
+  <li>Add three photos: owner with the item, ID photo, signature. JPEG, PNG, or WebP, up to 5 MB each.</li>
+  <li>Tick that you checked the person, the photos, and both earlier checks. Approve.</li>
+  <li>Press <b>Hand over</b>. Tick that the owner has the item now. This cannot be undone.</li>
+  <li>The claim and lost report close. Activity records who handed it over and when.</li>
+</ol>
+<div class="warn">
+  <strong>Always required</strong>
+  Valid ID at the office. No ID, no handover — even if the match was Strong and the answers were perfect.
+</div>
+
+<h2>10. Admin tools</h2>
+<p>Open <b>Admin</b>. Five tabs:</p>
+<table>
+  <tr><th>Tab</th><th>Use it for</th></tr>
+  <tr><td>Staff</td><td>Add CSA accounts (name, email, password of 12+ characters). Edit access: Active or Inactive. Only an existing administrator can add staff. You cannot remove the last admin.</td></tr>
+  <tr><td>Allowed emails</td><td>School roster for code sign-in. Add one email or import CSV (<kbd>email, name, student_number, role</kbd> with role student or professor). Switch off to stop sign-in without deleting. In live mode, a non-empty list is the only people who can use school-email codes.</td></tr>
+  <tr><td>People</td><td>See students, professors, and guests. Set password only after they show a valid ID. LyFind does not email it and does not write it in the log. Block spam or prank accounts (they are signed out). Records stay. Unblock later. LyFind does not delete accounts. Staff passwords are set on the Staff tab.</td></tr>
+  <tr><td>Activity</td><td>Append-only log: sign-ins, matches, checks, handovers, blocks, hidden reports. Search it. You cannot edit it.</td></tr>
+  <tr><td>Clean up</td><td>Items past the keep time with nobody checking them. Mark Not claimed per CSA policy. Claimed or reserved items are not expired this way.</td></tr>
+</table>
+<p>Your own name and phone are under <b>Account</b>. Email is shown but cannot be edited. Accounts cannot be deleted from the site.</p>
+
+<h2>11. Privacy, ID, and what never to skip</h2>
+<ul>
+  <li>Other students and guests never see someone else’s reports, answers, or photos.</li>
+  <li>Found-item photos and private details are staff-only until the workflow allows a claim.</li>
+  <li>Hide is not delete. Prank reports stay in the database and the log.</li>
+  <li>One active claim per item. Released items cannot be claimed again.</li>
+  <li>Most items are kept 30 days unless you set another keep time when receiving.</li>
+</ul>
+
+<h2>12. Classroom demo accounts</h2>
+<p>Only when the site is in demonstration mode. Listed under Help → Sample accounts. Password for all four: <kbd>DemoOnly!2026</kbd></p>
+<table>
+  <tr><th>Role</th><th>Email</th><th>What you can show</th></tr>
+  <tr><td>Student (Maria Santos)</td><td>demo.student@example.test</td><td>Lost green backpack with owner photo; claim after staff approve the match.</td></tr>
+  <tr><td>Professor</td><td>demo.professor@example.test</td><td>Found-item report / school-email sign-in.</td></tr>
+  <tr><td>Guest (Alex Rivera)</td><td>demo.guest@example.test</td><td>Guest lost report; wallet claim already in Verify.</td></tr>
+  <tr><td>CSA staff</td><td>demo.admin@example.test</td><td>To do, Matches, Claims, Admin.</td></tr>
+</table>
+<p>Suggested staff walkthrough: sign in as CSA → Matches → show owner photo vs office photo and Why this match? → Approve → sign in as Maria → Claim item → back as staff → Approve answers → Start check → photos → Hand over.</p>
+
+<h2>13. Help</h2>
+<p>The in-app <b>Help</b> page has the role guides and common questions. Use this page when you need the full staff procedure on paper or to print for the desk.</p>
+
+<h2>14. If something goes wrong</h2>
+<table>
+  <tr><th>Problem</th><th>What to try</th></tr>
+  <tr><td>Page will not load</td><td>Confirm Terminal still shows the server. Open http://127.0.0.1:8765 — not the file in the folder.</td></tr>
+  <tr><td>Port already in use</td><td><kbd>python3 main.py --port 8766</kbd></td></tr>
+  <tr><td>AI is off</td><td>Run <kbd>python3 setup_ai.py</kbd> once, stop the server with Ctrl+C, start again with <kbd>python3 main.py</kbd>.</td></tr>
+  <tr><td>No match for a real pair</td><td>Check category is the same, dates make sense, photos are of the actual items. Press Find matches. If photos differ, the pair is hidden on purpose.</td></tr>
+  <tr><td>Cannot hand over</td><td>Finish Start check, both Approves, and the three photos. The site blocks skipped steps.</td></tr>
+  <tr><td>Forgot staff password</td><td>Another administrator edits that staff row. There is no self-service delete or reset for owners beyond staff tools.</td></tr>
+</table>
+<h2>15. CSA office (LPU Cavite, public listings)</h2>
+<p>Center for Student Affairs handles lost and found. Bring a valid ID. These contacts are from LPU Cavite’s published pages, not demo placeholders.</p>
+<table>
+  <tr><th>Field</th><th>Value</th></tr>
+  <tr><td>Email</td><td>cav-csa@lpu.edu.ph</td></tr>
+  <tr><td>Phone</td><td>(046) 481-1414 · trunk (046) 481-1400 loc. 490. The CSA page also lists (046) 481-1490.</td></tr>
+  <tr><td>Hours</td><td>Monday to Friday, 8:00 AM to 5:00 PM</td></tr>
+  <tr><td>Campus</td><td>Governor’s Drive, Brgy. Manggahan, General Trias. Ask at Gate 1 or the Administration Building for the CSA office.</td></tr>
+</table>
+<p class="small">Directory: <a href="https://cavite.lpu.edu.ph/contact-info/">cavite.lpu.edu.ph/contact-info</a>. CSA page: <a href="https://cavite.lpu.edu.ph/campus-life/center-for-student-and-alumni-relations/">Center for Student Affairs</a>. Hours: campus contact page.</p>
+<p class="small">LyFind is a campus lost-and-found application for LPU CSA. Scores are not legal proof of ownership. Always follow CSA desk policy.</p>
+
+</body>
+</html>

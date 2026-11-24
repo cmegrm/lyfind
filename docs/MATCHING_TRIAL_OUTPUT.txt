@@ -1,0 +1,27 @@
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+REUNITE / PARTIAL AI MATCH + FLEXIBLE OWNERSHIP ANSWER
+Fictional case in a separate temporary database. Actual local CLIP inference.
+
+Received item: Brown leather folding wallet
+Owner description: Brown wallet lost while visiting campus
+Owner photo: none; description-to-photo comparison is used.
+Category: wallets / wallets. Color: Brown / brown.
+Brand: Unbranded / Unknown. Place: Student Center / Campus cafeteria.
+
+Actual score: 45.8 / 100 (possible)
+  description: 22.5728 / 30
+  photo: 8.1909 / 30
+  color: 15.0000 / 15
+  brand: 0.0000 / 15
+  place_date: 0.0000 / 10
+
+Before staff confirmation: owner sees no raw suggestion or score.
+CSA reviews the item, confirms the possible match, then invites the owner.
+
+Private CSA record: Blue receipt dated Monday tucked behind a red loyalty card
+Owner answer: There should be a red membership card in it. I tucked a little blue receipt behind the cards, probably from Monday. I cannot remember the wallet's brand, but those two things should still be inside.
+After submission: online check pending. No automatic ownership approval.
+
+CSA accepts the meaning of the paraphrased answer after reviewing the private details.
+Final stage: in-person check pending; no approval or physical release has occurred.
+PASS: non-perfect Possible match, private results, natural-language answer, staff-controlled decision.

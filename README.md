@@ -1,59 +1,67 @@
-# LyFind
+# LyFind — Campus Lost & Found (LPU Cavite CSA)
 
-LyFind includes the 2.0 public homepage, guided forms, account profiles, separate name fields, optional phone numbers, and student numbers derived from supported school-email formats. The modular backend lives in `lyfind/`, with individual workflows for reports, inventory, matches, claims, accounts, and dashboard views.
+A clean, modern web app for reporting, matching, and returning lost items at **LPU Cavite (Center for Student Affairs)**.  
+For visual slides of every screen and the AI flow, open **[LyFind_Website_Showcase.pdf](LyFind_Website_Showcase.pdf)**.
 
-## Open LyFind
+---
 
-Extract the whole ZIP. On Windows, double-click **START_CSA.bat**. On Mac, open **Reunite.app** from **Reunite_Mac.zip**. The Mac package includes Python. The launcher opens the live workspace, reopens its running server, and saves your records in `data/csa.sqlite3`.
+## Key Features
 
-On a first installation, choose **Login → Set up the first CSA administrator** from the desktop launcher's page. Existing administrators use the email-and-password form. Students and professors use `@lpunetwork.edu.ph` emails. CSA can manage eligible school addresses under **Administration → Records → Allowed emails**, including a CSV preview before import.
+- **Clean Editorial Design + Pure Black Dark Mode:** Light Mode (`#FFFFFF`) and matching Pure Black Dark Mode (`#0B0B0C`), responsive across desktop and mobile, with blended logos and quick theme/accessibility controls in the bottom-right corner.
+- **Google Gemini AI Matching & Photo Auto-Fill:** Compares photos, descriptions, and private clues using Google Gemini (`store=False` so Google does not save student photos or clues), with automatic offline backup matching if there is no internet.
+  - **Fill details with AI:** Upload a photo first to auto-fill Kind, Color, Brand, and Description.
+  - **Match Score Weights:** Description `30%`, Photo `30%`, Color `15%`, Brand `15%`, Place & Date `10%` (`60%+` Strong, `40%–59%` Possible; CSA staff always make the final call).
+- **Digital Claim Pass & Handover Receipt:** Printable `LYF-CLM-...` pass with owner details, ID reminder, and CSA office hours.
+- **CSA Staff Desk & Campus Hotspots:** Unified *Needs attention* queue, top 5 campus hotspot buildings with recovery rate, shared **Contact CSA / CSA inbox**, and a **Start Fresh (0 reports)** button in Demo Administration.
+- **Demo & Live Modes:** Sample accounts (`•••` quick switcher) run in an isolated demo database (`data/demo.sqlite3`) without touching real records.
 
-## Guest access
+---
 
-Choose **Guest · send an email code** from Login, or **Sign up → Guest**. Enter a personal email and verify its six-digit code. A guest password is unnecessary. After entering the full code, you can choose **Remember this browser** for 30 days. Your reports stay linked to the verified email. Guests can submit lost reports and follow claims. Found items should be brought directly to CSA.
+## Quick Start (Run Locally)
 
-## Staff and student tools
+1. Install **Python 3.10+**, open a terminal in this folder, and install dependencies:
+   ```bash
+   python -m venv .venv
+   .venv\Scripts\activate
+   pip install -r requirements-web.txt
+   ```
+2. *(Optional for Gemini AI)* Copy `.env.example` to `.env` and add your `GEMINI_API_KEY` from [Google AI Studio](https://aistudio.google.com/apikey).
+3. Start Demo mode:
+   ```bash
+   python main.py --demo
+   ```
+   *(Or double-click `START_CSA.bat` on Windows for live desktop launch.)*
 
-- Students and professors can open **Found items** to browse CSA-published category and found-week summaries. Photos, exact locations, and identifying details remain private. CSA chooses whether each received item is listed.
-- Signed-in users can open **Contact CSA**. Administrators open the shared **CSA inbox** and reply to the same conversations.
-- **Administration → Maintenance** creates a backup of records and registered images. In the isolated testing workspace, **Reset demo** saves a backup first, restores samples, and ends demo sessions.
-- Matching uses the five proposal weights. Description 30%, photo 30%, color 15%, brand 15%, and place/date 10%. Strong starts at 60 with additional agreement checks, Possible at 40. Typed-only scoring is capped below Strong. Similar candidates receive a staff warning.
+---
 
-## Testing and local AI
+## Publish Online 24/7 (Render Blueprint)
 
-Lost and found reports now save unfinished text as an account-specific draft on this browser for seven days. The Dashboard offers Resume draft; the report also offers Discard draft. Photos are not saved as local draft image data: choose them again after reopening unless they were already uploaded during an interrupted save. Guest found reports remain disabled. CSA desk reports for visitors have a review step but do not store visitor details as browser drafts.
+1. Push this repo to GitHub (`.env`, `.venv/`, `data/`, and `*.log` stay excluded via `.gitignore`).
+2. In **Render → New Blueprint Instance**, select your GitHub repo (`render.yaml` configures Python, Gunicorn, Demo mode, and security headers automatically).
+3. Paste your `GEMINI_API_KEY` in Render Environment Variables and deploy. Full details are in [docs/PUBLISH_ONLINE.md](docs/PUBLISH_ONLINE.md).
 
-Choose Review report, check the summary, use Edit details if needed, then confirm submission. If a reply is lost, Try again safely returns the original lost/found report using a saved submission key. A changed payload using an already-saved key is refused so an interrupted save cannot silently become a different report. If saving succeeds but the dashboard cannot reload, use Refresh dashboard; do not resubmit. Your next step highlights invitations, office visits, found-item handoff, or waiting for CSA.
+---
 
-The testing Help page includes a classmate exercise. The observer worksheet is `docs/CLASSMATE_USABILITY_TEST.md`. Actual classmate testing still needs the group; automated checks are not claimed as human feedback.
+## Categorized Project Map
 
-Three quiet controls stay in the lower-right corner: the sun/moon switches light and dark mode, the person icon opens Accessibility, and the three dots open testing when using the local desktop launcher. Accessibility offers normal or larger text, higher contrast, and reduced motion. Motion follows the device by default. Preferences are remembered on this browser; forms and CSA conversations include the same controls without losing drafts. Keyboard focus, inline field guidance, and save/error announcements work automatically. Reset accessibility settings restores reading preferences and leaves the chosen light/dark theme in place.
+| Category | Key Files & Folders | What They Do |
+| --- | --- | --- |
+| **Frontend / Website UI** | `static/app.js`, `static/style.css`, `static/support.css`, `static/index.html`, `static/boot.js`, `static/assets/` | Renders all screens, Light/Dark themes, slideshows, report forms, support chat, and real campus photos. |
+| **Backend & AI Engine** | `lyfind/web.py`, `lyfind/gemini_matching.py`, `lyfind/ai_runtime.py`, `lyfind/auth.py`, `lyfind/workflows/`, `lyfind/workspace_maintenance.py`, `lyfind/database.py` | Handles web routes, Gemini multimodal matching & photo auto-fill, sign-in/security, SQLite storage, and backups/resets. |
+| **Launch & Hosting** | `main.py`, `wsgi.py`, `render.yaml`, `requirements-web.txt`, `START_CSA.bat`, `.env.example` | Starts the app locally (`--demo` or live) or online via Gunicorn/Render. |
+| **Presentation & Docs** | `LyFind_Website_Showcase.pdf`, `docs/PUBLISH_ONLINE.md`, `docs/` | 7-page team showcase deck, hosting instructions, architecture notes, and user guides. |
+| **Automated Tests & Tools** | `tests/`, `scripts/`, `Tools/` | 61+ automated unit/static/integration tests, demo runner scripts, and Windows helper shortcuts. |
 
-Testing opens in a separate tab with one-click access to two students, one professor, one guest, and one CSA staff sample. The same three-dot button switches between samples without typing passwords. The testing workspace uses `data/demo.sqlite3` and `data/test-uploads`; sample access remains disabled in live mode. The public Help page keeps its testing shortcut and account list. Sample passwords are `DemoOnly!2026` if manual sign-in is preferred.
+> **Compatibility Note:** Top-level root Python/SQL files (`matching.py`, `web.py`, `services.py`, `schema.sql`, etc.) stay at the project root so older scripts and automated test imports continue working seamlessly alongside `lyfind/`.
 
-Run **SETUP_AI.bat** on Windows or **Reunite Controls → Set up local AI** on Mac to prepare local CLIP and DINOv2. The existing local model folders are reused. Until AI is ready, the interface identifies typed-detail matching.
+---
 
-### Google AI Studio (Gemini) and Publishing Online
+## Verification
 
-LyFind also supports **Google AI Studio (Gemini)** for multimodal text, owner-only mark, and photo matching—ideal when publishing the site online or avoiding heavy local PyTorch installs:
+Run the frontend, Gemini/online, and integration suites:
 
-1. Install lightweight web dependencies: `pip install -r requirements-web.txt`
-2. Add your private API key to `.env` (see `.env.example`):
-   - `AI_PROVIDER=gemini` (or `auto`, which uses Gemini whenever `GEMINI_API_KEY` is set and falls back to local AI or typed details)
-   - `GEMINI_API_KEY=<your-key>`
-   - `GEMINI_MODEL=gemini-4-hydrogen`
-3. Match results are cached in the `ai_match_cache` SQLite table so unchanged report/item pairs do not repeat API calls, and AI runs outside database write locks.
-4. For free or paid online hosting (**PythonAnywhere**, **Render**, or **Railway**), use `wsgi.py` and follow [docs/PUBLISH_ONLINE.md](docs/PUBLISH_ONLINE.md).
-
-### Codebase Layout (`lyfind/` vs. root `.py` files)
-
-- **Live v2 application:** `main.py`, `wsgi.py`, `static/`, and the modular `lyfind/` package (`lyfind/web.py`, `lyfind/workflows/`, `lyfind/gemini_matching.py`, `lyfind/ai_runtime.py`, `lyfind/auth.py`, `lyfind/database.py`, `lyfind/schema.sql`).
-- **Root compatibility modules:** Top-level files like `matching.py`, `web.py`, `services.py`, and `schema.sql` remain in the root folder for backward compatibility with older scripts and proposal checks (`matching.py` still holds the shared five-clue base scoring engine used by `lyfind/proposal_matching.py`).
-
-## Email and saved records
-
-The sender is loaded from the private Windows profile settings or the project's private `.env`. Email settings and real data are excluded from the shared ZIP. Real email requires a configured sender. The local testing workspace shows a demonstration code when no sender is configured.
-
-Starting this version upgrades older databases in place and saves a database snapshot under `data/backups/schema_migrations` before normalizing names and ownership answers. IDs, reports, claims, uploaded-image references, audit history, and CSA conversations are preserved.
-
-For a demonstration of the complete claim and physical-handover workflow, run `python scripts/demo.py`. For the integration regression checks, run `python -m unittest discover -s tests -p test_current_integration.py`.
+```bash
+python -m unittest discover -s tests -p "test_frontend_static.py"
+python -m unittest discover -s tests -p "test_gemini_and_online.py"
+python -m unittest discover -s tests -p "test_current_integration.py"
+```
